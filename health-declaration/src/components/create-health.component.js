@@ -42,7 +42,7 @@ export default class CreateHealth extends Component {
             phonenumber: this.state.phonenumber,
         }
 
-        axios.post('http://localhost:5000/health/add', health)
+        axios.post('https://mern-stack-app-health-declaration.onrender.com/health/add', health)
             .then(res => window.location = "/")
             .catch(err => console.log('Error: ' + err));
     }

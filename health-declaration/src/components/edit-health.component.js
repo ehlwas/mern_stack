@@ -22,7 +22,7 @@ export default class EditHealth extends Component {
     componentDidMount() {
         const id = window.location.href.split("/")[4];
         // NOTE: can use this.props.match.params.id to access the URL ID. Not sure why is not working
-        axios.get('http://localhost:5000/health/'+id)
+        axios.get('https://mern-stack-app-health-declaration.onrender.com/health/'+id)
             .then(res => {
                 this.setState({
                     fullname: res.data.fullname,
@@ -60,7 +60,7 @@ export default class EditHealth extends Component {
 
         const id = window.location.href.split("/")[4];
         // NOTE: can use this.props.match.params.id to access the URL ID. Not sure why is not working
-        axios.post('http://localhost:5000/health/update/'+id, health)
+        axios.post('https://mern-stack-app-health-declaration.onrender.com/health/update/'+id, health)
             .then(res => window.location = "/")
             .catch(err => console.log('Error: ' + err));
     }

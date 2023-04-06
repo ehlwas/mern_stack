@@ -28,7 +28,7 @@ export default class HealthList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/health/')
+        axios.get('https://mern-stack-app-health-declaration.onrender.com/health/')
             .then(res => {
                 this.setState({ health: res.data });
             })
@@ -44,7 +44,7 @@ export default class HealthList extends Component {
     }
 
     deleteHealth(id) {
-        axios.delete('http://localhost:5000/health/'+id)
+        axios.delete('https://mern-stack-app-health-declaration.onrender.com/health/'+id)
             .then(res => console.log(res.data))
             this.setState({
                 health: this.state.health.filter(el => el._id !== id)
